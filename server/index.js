@@ -14,14 +14,23 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 /** API routes */
 // Muestra todos los speakers.
-app.get('/api/speakers', (req, res) => {
-  res.sendFile(path.join(__dirname, 'db', 'speakers.json'))
+app.get('/api/cities', (req, res) => {
+
+  var city = req.query.city;
+  locationUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=d44a9a4bee745cb891f925b29dea38c0&format=json";
+
+
+request(locationUrl, function (error, response, body) {
+if (!error && response.statusCode == 200) {
+  weatherObj=JSON.parse(body);
+  weatherObj=weatherObj.main;
+  res.json(weatherObj);
+}
+})
 })
 
 // Muestra info de un único speaker.
-app.get('/api/speakers/:id', (req, res) => {
-  res.sendFile(path.join(__dirname, 'db', `${req.params.id}.json`))
-})
+
 
 // envía el index.html para la SPA.
 app.get('*', (req, res, next) => {

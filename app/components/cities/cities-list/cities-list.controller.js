@@ -2,11 +2,17 @@ class CitiesListController {
   constructor(CitiesService) {
     this.citiesService = CitiesService
     this.cities = []
-    this.loadData
+    this.loadData();
   }
 
+
+
+
+
   loadData () {
-    this.citiesService.getSpeakers()
+
+    var city="Madrid"
+    this.citiesService.getCitiesTemp(city)
       then(response => {
         this.cities = response.data
       })

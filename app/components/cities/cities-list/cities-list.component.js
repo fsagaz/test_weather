@@ -2,7 +2,7 @@ import controller from './cities-list.controller'
 
 export const CitiesListComponent = {
   bindings: {
-    speakers: '<'
+    cities: '<'
   },
   controller,
   template: `

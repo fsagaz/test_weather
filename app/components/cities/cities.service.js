@@ -3,8 +3,10 @@ class CitiesService {
   constructor ($http) {
     this.$http = $http
   }
-  getCitiesTemp () {
-    return this.$http.get('/api/cities').then(response => response.data)
+  getCitiesTemp (city) {
+    var locationUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=d44a9a4bee745cb891f925b29dea38c0&format=json";
+
+    return this.$http.get(locationUrl).then(response => response.data)
   }
 }
 

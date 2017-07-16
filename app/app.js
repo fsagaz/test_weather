@@ -3,14 +3,14 @@ import angular from 'angular'
 import uiRouter from 'angular-ui-router'
 
 import common from './common/common'
-//import components from './components/components'
+import components from './components/components'
 import { AppComponent } from './app.component'
 
 const root = angular
   .module('weatherApp', [
     uiRouter,
-    common
-    //components
+    common,
+    components
   ])
   .component('weatherApp', AppComponent)
 
