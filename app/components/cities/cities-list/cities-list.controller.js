@@ -3,7 +3,7 @@ class CitiesListController {
         this.citiesService = CitiesService
         this.cities = [];
         this.actualTime;
-        this.cities_array = ["Madrid", "Barcelona", "Berlin"];
+        this.cities_array = ["Santiago", "Buenos Aires", "Lima", "Sao Paulo"];
         this.loadData();
         setInterval(() => this.loadData(), 15000);
     }
