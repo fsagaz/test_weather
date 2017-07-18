@@ -1,4 +1,4 @@
-// /app/common/common.js
+
 import angular from 'angular'
 
 import { HeaderComponent } from './header/header.component'

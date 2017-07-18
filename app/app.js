@@ -15,6 +15,7 @@ const root = angular
     components
   ])
   .component('weatherApp', AppComponent)
+  
 
 document.addEventListener('DOMContentLoaded', () => angular.bootstrap(document, ['weatherApp']))
 

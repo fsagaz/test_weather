@@ -9,4 +9,4 @@ function getData(city){
 
 
 
-export default { getData };  
+export default { getData };
